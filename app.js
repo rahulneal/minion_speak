@@ -4,9 +4,9 @@ var output = document.querySelector("#output")
 
 // console.log(txtinput);
 
- var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
+ //var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
 
-//var serverURL = "https://api.funtranslations.com/translate/minion.json"
+var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
 function getTranslationURL(inputText){
     return serverURL + "?text=" + inputText
