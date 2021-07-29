@@ -4,12 +4,12 @@ var output = document.querySelector("#output")
 
 // console.log(txtinput);
 
-// var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
+ var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
 
-var serverURL = "https://api.funtranslations.com/translate/minion.json"
+//var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
-function getTranslationURL(text){
-    return serverURL + "?" + "text" + text
+function getTranslationURL(inputText){
+    return serverURL + "?text=" + inputText
 }
 
 function errorHandler(error) {
@@ -29,10 +29,13 @@ function clickHandler() {
 
     fetch(getTranslationURL(inputText))
             .then(Response => Response.json())
-            .then(json => { var translatedText = json.content.translated;
-            output.innerText = translateText; }) 
+            .then(json => { 
+                var tText = json.contents.translated;
+            output.innerText = tText; }) 
            .catch(errorHandler)
 
+           
 };
+
 
 btnTranslate.addEventListener("click", clickHandler)
